@@ -1,0 +1,62 @@
+/*
+
+Factorial of a Number
+Contributed by
+srejanbera
+Medium
+80/80
+Avg time to solve 25 mins
+Success Rate 70 %
+Share
+4 upvotes
+Problem Statement
+Detailed explanation ( Input/output format, Notes, Constraints, Images )
+Sample Input 1:
+2
+4
+3
+Sample Output 1:
+24
+6
+Explanation Of Sample Input 1:
+For the first test case, 
+The Factorial of 4 is the product of all numbers from 1 to 4, which is 1 * 2 * 3 * 4 = 24. Hence, the answer is 24.
+
+For the second test case,
+The Factorial of 3 is the product of all numbers from 1 to 3, which is 1 * 2 * 3 = 6. Hence, the answer is 6.
+Sample Input 2:
+2
+8
+11
+Sample Output 2:
+40320
+39916800
+
+*/
+
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class Solution {
+    public static void factorial(int n) {
+        if (n < 0) {
+            System.err.println("Error: Input must be non-negative.");
+            System.exit(1);
+        }
+
+        BigInteger fact = BigInteger.ONE;
+        for (int i = 1; i <= n; i++) {
+            fact = fact.multiply(BigInteger.valueOf(i));
+        }
+        System.out.println(fact);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t-- > 0) {
+            int n = sc.nextInt();
+            factorial(n);
+        }
+    }
+}
